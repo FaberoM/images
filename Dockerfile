@@ -6,7 +6,7 @@ FROM        mono:5
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN         useradd -d /home/container -m container \
+RUN         useradd -u 991 -d /home/container -m container \
             && apt update \
             && apt install -y iproute2 unzip curl screen
 
