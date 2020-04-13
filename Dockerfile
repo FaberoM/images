@@ -14,6 +14,8 @@ RUN         useradd -u 991 -d /home/container -m container \
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
+RUN         mkdir /home/container/.screen && chmod 700 ~/.screen
+ENV         SCREENDIR=$HOME/.screen
 
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
