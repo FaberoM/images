@@ -8,7 +8,8 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         useradd -u 991 -d /home/container -m container \
             && apt update \
-            && apt install -y iproute2 unzip curl screen
+            && apt install -y iproute2 unzip curl screen tmux
+            && chmod -R 777 /var/run/screen
 
 USER        container
 ENV         USER=container HOME=/home/container
