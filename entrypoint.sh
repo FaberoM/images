@@ -26,6 +26,7 @@ export GROUP_ID=$(id -g)
 envsubst < /passwd.template > ${NSS_WRAPPER_PASSWD}
 export LD_PRELOAD=/libnss_wrapper.so
 
+/home/container/steamcmd/steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} +quit
 # Run the Server
 ${MODIFIED_STARTUP}
 
